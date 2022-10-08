@@ -15,6 +15,7 @@ function App() {
       children:[
         {
           path:'/',
+          loader:() => fetch('tShirt.json'),
           element: <Home/>
         },
 
