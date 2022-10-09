@@ -1,12 +1,12 @@
 import React from 'react';
 import './Cart.css';
-const Cart = ({cart}) => {
+const Cart = ({cart,handleRemoveItem}) => {
     return (
         <div>
-            <h2>Orders Summary: {cart.length} </h2>
+            <h2 className = {cart.length === 0 ? "red":'blue' }>Orders Summary: {cart.length} </h2>
             <div>
                 {
-                    cart.map(tshirt => <p
+                    cart.map(tshirt => <div
                     key={tshirt._id}
                     >
                     <div className="cart-item">
@@ -14,9 +14,12 @@ const Cart = ({cart}) => {
                             <h4>{tshirt.name} </h4>
                             <p>Price: ${tshirt.price} </p>
                         </div>
-                        <button>Remove</button>
+                        <button className="remove-btn" onClick= {() => handleRemoveItem(tshirt._id)} >Remove</button>
                     </div>
-                    </p>)
+                    </div>)
+                }
+                {
+                    cart.length === 3 && <h2>Thanks for buying!!</h2>
                 }
             </div>
         </div>

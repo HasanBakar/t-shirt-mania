@@ -20,6 +20,13 @@ const Home = () => {
         }
     }
 
+    const handleRemoveItem = id =>{
+       
+        const remainingItem = cart.filter(ts =>ts._id !== id);
+        setCart(remainingItem);
+        Swal.fire('Item successfully removed!!');
+    }
+
     return (
         <div className ="home-container">
             <div className="tshirt-container">
@@ -32,7 +39,9 @@ const Home = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}
+                    handleRemoveItem={handleRemoveItem}
+                ></Cart>
             </div>
         </div>
     );

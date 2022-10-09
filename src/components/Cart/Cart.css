@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: rgb(221, 221, 214);
-    margin: 0 14px;
+    margin: 12px 14px;
     padding: 0 12px;
     box-shadow: 3px 3px 3px rgb(230, 140, 140);
     border-radius: 12px;
@@ -11,4 +11,29 @@
 
 .cart-item-info {
     text-align: center;
+}
+
+.remove-btn {
+    background-color: rgb(240, 188, 188);
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 15px;
+}
+
+.remove-btn:hover {
+    background-color: red;
+}
+
+/* some class for conditional css below */
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
 }
